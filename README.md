@@ -16,4 +16,7 @@ mockgen -destination=application/mocks/application.go -source=application/produc
 sqlite3 sqlite.db
 # SQL commands:
 create table products(id varchar(255), name varchar(255), price float, status string);
+
+# Run the app
+go run main.go
 ```
