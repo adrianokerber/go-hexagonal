@@ -1,17 +1,11 @@
+/*
+Copyright © 2025 Adriano Kerber <kerberpro@gmail.com>
+
+*/
 package main
 
-import (
-	"database/sql"
-
-	dbAdapter "github.com/adrianokerber/go-hexagonal/adapters/db"
-	"github.com/adrianokerber/go-hexagonal/application"
-)
+import "github.com/adrianokerber/go-hexagonal/cmd"
 
 func main() {
-	db, _ := sql.Open("sqlite3", "sqlite.db")
-	productDbAdapter := dbAdapter.NewProductDb(db)
-	productService := application.NewProductService(productDbAdapter)
-
-	product, _ := productService.Create("Product Example", 30)
-	productService.Enable(product)
+	cmd.Execute()
 }
